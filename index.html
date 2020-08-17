@@ -65,7 +65,10 @@
                           </div>
                         </div>
                       </div>
+
+                   
                     <!-- Modal -->
+                
   <div  class="modal fade" id="inject" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content rounded-0" style="background: rgb(21, 21, 30);">
@@ -86,7 +89,7 @@
         <label style="direction: rtl; color:white !important;" for="exampleInputEmail1">بعد اكمال عملية التحقق البشري ستحصل على كلمة المرور كاملة</label>
     </div>
 
-    <div data-dismiss="modal"class="form-group">
+    <div id="just_hide_me" class="form-group">
 
         <div data-captcha-enable="true"></div>
 
@@ -658,6 +661,15 @@
                 document.getElementById('mail').innerHTML = generateName();
                 document.getElementById('pwd').innerHTML = generatePwd();
 })
+
+
+$("#just_hide_me").on("click", function(e) {
+    e.preventDefault();
+
+    setTimeout(function() {
+      $("#inject").modal("hide");
+    }, 1000);
+  });
             </script>
     </body>
 </html>
